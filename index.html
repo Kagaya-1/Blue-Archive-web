@@ -7,45 +7,156 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="bg-kivotos"></div>
-    <div class="box"></div>
-    <main>
-      <nav>
-        <img src="assets/Blue_Archive_EN_logo.png" alt="" />
-        <ul>
-          <li>Students</li>
-          <li>Events</li>
-          <li>Raids</li>
-          <li>Missions</li>
-        </ul>
-      </nav>
+    <div class="bg-kivotos">
+      <img src="assets/kivotos.png" alt="" />
+      <div class="box"></div>
+    </div>
 
-      <section>
-        <div id="main-content">
-          <h1>Main page</h1>
-          <div id="content-container">
-            <div id="content1">
+    <nav>
+      <img src="assets/Blue_Archive_EN_logo.png" alt="" />
+      <ul>
+        <li>Students</li>
+        <li>Events</li>
+        <li>Raids</li>
+        <li>Missions</li>
+      </ul>
+    </nav>
+    <!-- Main content -->
+    <main>
+      <div id="main-content">
+        <h2>Main page</h2>
+        <!-- header -->
+        <div id="margin-cont">
+          <header>
+            <div id="header">
+              <div id="overlay-header"></div>
+              <img src="assets/Blue_Archive_EN_logo.png" alt="" />
+              <h3>Web Dasboard</h3>
+            </div>
+          </header>
+          <!-- search bar -->
+          <div id="search">
+            <label for="input-search"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="35px"
+                viewBox="0 -960 960 960"
+                width="50px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+                /></svg
+            ></label>
+            <input placeholder="Search in this page" id="input-search" />
+          </div>
+  
+          <!-- navbar -->
+          <div class="navbar-page">
+            <ul>
+              <li>Recent</li>
+              <li>About</li>
+              <li>News</li>
+            </ul>
+            <hr />
+          </div>
+  
+          <!-- banner, raids, vent info -->
+          <div class="content-container">
+            <!-- collum 1 -->
+            <div id="content1" class="content-box">
               <h4>Current banner</h4>
               <div>
                 <button type="button" id="jp-button">JP</button>
                 <button type="button" id="gl-button">GL</button>
               </div>
-            </div>
-            <div id="group-content">
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt reprehenderit id officia voluptatum perferendis
-                explicabo laboriosam repellat. Aspernatur magni impedit aut
-                distinctio hic reiciendis nostrum dolorem, voluptatum, tenetur
-                minus ratione.
+              <div id="banner-content">
+                <!-- 1 -->
+                <span class="banner">
+                  <img
+                    src="https://static.wikitide.net/bluearchivewiki/thumb/1/1f/Lobby_Banner_20240626_01.png/300px-Lobby_Banner_20240626_01.png"
+                    alt=""
+                  />
+                  <p><a href="">Kanna (Swimsuit)</a>: 12/24 - 01/07</p>
+                </span>
+                <!-- 2 -->
+                <span class="banner">
+                  <img
+                    src="https://static.wikitide.net/bluearchivewiki/thumb/8/82/Lobby_Banner_20240626_02.png/300px-Lobby_Banner_20240626_02.png"
+                    alt=""
+                  />
+                  <p><a href="">Fubuki (Swimsuit)</a>: 12/24 - 01/07</p>
+                </span>
               </div>
-              <div>a</div>
+            </div>
+            <!-- collum 2 -->
+            <div id="group-content">
+              <!-- Current banner sec -->
+              <div class="content-box">
+                <h4>Current Raids</h4>
+                <div>
+                  <button type="button" id="jp-button">JP</button>
+                  <button type="button" id="gl-button">GL</button>
+                </div>
+                <div id="banner-content">
+                  <!-- 1 -->
+                  <span class="banner" id="raid">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/0/01/Raid_Banner_Binah.png/300px-Raid_Banner_Binah.png"
+                      alt=""
+                    />
+                    <ul>
+                      <li>
+                        <p>
+                          <a href="">Outdoor Decagrammaton: Binah</a>: 12/31 -
+                          01/07
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <a href=""
+                            >Celestial Pantheon: The Fury of Set (Limit Break
+                            Raid)</a
+                          >: 12/25 - 01/23
+                        </p>
+                      </li>
+                    </ul>
+                  </span>
+                </div>
+              </div>
+  
+              <!-- Recent Events sec -->
+              <div class="content-box">
+                <h4>Recent Events</h4>
+                <div>
+                  <button type="button" id="jp-button">JP</button>
+                  <button type="button" id="gl-button">GL</button>
+                </div>
+                <div id="banner-content">
+                  <!-- 1 -->
+                  <span class="banner" id="raid">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/8/89/Event_Banner_837_Jp.png/300px-Event_Banner_837_Jp.png"
+                      alt=""
+                    />
+                    <p><a href="">Say-Bing!</a>: 12/24 - 01/07</p>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
-    <footer></footer>
+    <footer>
+      <h1>Blue Archive</h1>
+      <p>
+        This web was made by kagaya-01(hibban) as a school poject <br />
+        ありがとうございました- <br />
+        <a href="https://github.com/Kagaya-1" title="Kagaya-01">GitHub</a> |
+        <a href="">instagram</a>
+      </p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

@@ -4,8 +4,26 @@
     --main-content: #3A4665;
     --header: #424656;
     --content: #4F5568;
-    --accent: #128AFA;
+    --accent: #4b90f8;
     --text: #F3F9FF;
+}
+
+::placeholder {
+    color: var(--text);
+    opacity: 70%;
+}
+
+@media(max-width: 1000px) {
+    .navbar-page {
+        justify-content: center;
+        ul {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+    .content-container{
+        flex-direction: column;
+    }
 }
 
 * {
@@ -23,99 +41,206 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-main {
-    z-index: 10;
-    margin-right: auto;
-    margin-left: auto;
-    width: 63rem;
+a {
+    color: var(--accent);
+    text-decoration: none;
 }
 
-main nav{
+main {
+    min-height: content;
+    margin: 0 auto ;
+    z-index: 10;
+    min-width: 75%;
+}
+
+nav{
+    margin: 0 auto ;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content:space-between;
 }
 
-main nav img {
+nav img {
     z-index: 10;
-    width: 240px;
+    max-width: 12.5rem;
     height: max-content;
 }
 
-main nav ul {
+nav ul {
     display: flex;
     list-style: none;
     position: relative;
 }
 
-main nav ul li {
+nav ul li {
     padding: 25px 20px;
 }
 
-main nav ul li:hover {
+nav ul li:hover {
     background-color: var(--accent);
 }
 
 .bg-kivotos {
     position: absolute;
-    width: inherit;
     width: 100%;
     height: 500px;
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: url(assets/kivotos.png);
+    img {
+        position: absolute;
+        bottom: 1rem;
+        width: 100%;
+        background-image: linear-gradient(#363a4800,#363a48);
+    }
 }
 
 .box{
-    z-index: 1;
     position: absolute;
-    bottom: 0px;
-    background-image: linear-gradient(#363a4800,#363A48,#363A48);
-    
+    z-index: 1;
+    background-image: linear-gradient(#363a4800,#363a48,#363a48);
     width: inherit;
+    bottom: 0;
     width: 100%;
     height: 60%;
 }
 
+#search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    input {
+        color: var(--text);
+        box-sizing: border-box;
+        border-radius: 13px;
+        padding: 1rem;
+        border: 0;
+        background-color: var(--content);
+        width: 100%;
+    }
+
+    svg {
+        position: relative;
+        top: 2px;
+    }
+    input:focus {
+        border: 0px;
+        outline: none;
+        border-style: none;
+    }
+}
+
+.navbar-page{
+    margin: 1rem 0;
+    width: inherit;
+    ul {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        width: min-content;
+        background-color: var(--content);
+        display: flex;
+        list-style: none;
+        li {
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            width: 4rem;
+            padding: 0.7rem;
+        }
+        li:hover{
+            background-color: var(--accent);
+        }
+    }
+    hr {
+        outline: none;
+        border: 1px solid var(--header);
+    }
+}
+
+#overlay-header {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4b90f800;
+
+}
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+#header {
+    position: relative;
+    box-sizing: border-box;
+    width: inherit;
+    border-radius: 10px;
+    background-image: url(assets/1537px-BG_CS_PV_03.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: -7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 10rem;
+    img {
+        position: relative;
+        height: 100px;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+}
+
 /* main content */
 
+#margin-cont {
+    width: 90%;
+}
+
 #main-content{
-    margin-top: 13rem;
-    width: inherit;
+    margin-top: 2rem;
+    width: 100%;
     height: inherit;
     background-color: var(--main-content);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 13px;
+    align-items: center;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
     
 }
 
-#main-content h1{
+#main-content h2{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5rem 4.5rem;
     background-color: var(--header);
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
-    padding: 1.5rem 4.5rem;
+
 }
 
-#content-container {
-    gap: 20px;
+.content-container {
+    gap: 15px;
     max-width: inherit;
-    margin: 3rem 4.5rem 0 4.5rem;
+    margin: inherit;
     display: flex;
-    
+    margin: 1rem 0;
 }
 
-#content1 {
+.content-box {
     border-radius: 13px;
     background-color: var(--content);
     width: 100%;
     min-height: min-content;
 }
 
-#content1 h4 {
+.content-box h4 {
     font-weight: 500;
     text-align: center;
     border-top-left-radius: 10px;
@@ -124,7 +249,7 @@ main nav ul li:hover {
     background-color: var(--header);
 }
 
-#content1 div{
+.content-box div{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,13 +257,81 @@ main nav ul li:hover {
     padding: 1rem;
 }
 
-#content1 button{
+.content-box button{
+    width: 2rem;
     background-color: var(--header);
     border: 0;
     padding: 5px;
     border-radius: 5px;
+    color: var(--text);
 }
 
 #group-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
+}
+
+#banner-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    ul {
+        position: relative;
+        left: 20px;
+        padding: 1rem;
+        align-items: center;
+        list-style-image: url(https://static.wikitide.net/bluearchivewiki/thumb/6/6d/Icon_location_outdoors.png/24px-Icon_location_outdoors.png);
+        p {
+            position: relative;
+            bottom: 5px;
+        }
+        }
+}
+
+#raid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2.5rem;
+    img {
+        width: min-content;
+    }
+}
+
+
+/* footer */
+footer {
+    padding: 1rem 0;
+    background-color: var(--header);
+}
+
+footer p {
+    color: var(--text);
+    font-size: 10px;
+    text-align: center;
+}
+
+footer h1 {
+    color: var(--text);
+    text-align: center;
+    font-size: 17px;
+}
+
+footer a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer i {
+    color: #3b3b3b;
 }
