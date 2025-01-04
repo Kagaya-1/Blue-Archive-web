@@ -11,7 +11,6 @@
       <img src="assets/kivotos.png" alt="" />
       <div class="box"></div>
     </div>
-
     <nav>
       <img src="assets/Blue_Archive_EN_logo.png" alt="" />
       <ul>
@@ -23,11 +22,17 @@
     </nav>
     <!-- Main content -->
     <main>
+      <div class="banner-kivotos">
+        <div class="bg-kivotos1"></div>
+        <img src="assets/Blue_Archive_EN_logo.png" alt="" />
+        <h3>Web Wiki</h3>
+      </div>
+
       <div id="main-content">
         <h2>Main page</h2>
         <!-- header -->
         <div id="margin-cont">
-          <header>
+          <header id="headerWrapped">
             <div id="header">
               <div id="overlay-header"></div>
               <img src="assets/Blue_Archive_EN_logo.png" alt="" />
@@ -50,7 +55,7 @@
             ></label>
             <input placeholder="Search in this page" id="input-search" />
           </div>
-  
+
           <!-- navbar -->
           <div class="navbar-page">
             <ul>
@@ -60,47 +65,103 @@
             </ul>
             <hr />
           </div>
-  
+
           <!-- banner, raids, vent info -->
           <div class="content-container">
-            <!-- collum 1 -->
-            <div id="content1" class="content-box">
-              <h4>Current banner</h4>
-              <div>
-                <button type="button" id="jp-button">JP</button>
-                <button type="button" id="gl-button">GL</button>
+            <div class="collum-1">
+              <!-- collum 1 -->
+              <div class="content-box">
+                <h4>Current banner</h4>
+                <div id="btnWrapped">
+                  <button onclick="display('boxBanner2','boxBanner1')">
+                    JP
+                  </button>
+                  <button onclick="display('boxBanner1','boxBanner2')">
+                    GL
+                  </button>
+                </div>
+                <div id="boxBanner1" class="bannerWrapper bannerGacha">
+                  <!-- 1 -->
+                  <div class="bannerWrapper">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/1/1f/Lobby_Banner_20240626_01.png/300px-Lobby_Banner_20240626_01.png"
+                      alt=""
+                    />
+                    <p><a href="">Kanna (Swimsuit)</a>: 12/24 - 01/08</p>
+                  </div>
+                  <!-- 2 -->
+                  <div class="bannerWrapper">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/8/82/Lobby_Banner_20240626_02.png/300px-Lobby_Banner_20240626_02.png"
+                      alt=""
+                    />
+                    <p><a href="">Fubuki (Swimsuit)</a>: 12/24 - 01/08</p>
+                  </div>
+                </div>
+
+                <!-- banner content2 -->
+                <div id="boxBanner2">
+                  <!-- 1 -->
+                  <div class="bannerWrapper">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/f/f0/Lobby_Banner_20241224_01.png/300px-Lobby_Banner_20241224_01.png"
+                      alt=""
+                    />
+                    <p><a href="">Yuuka (Pajama)</a>: 12/24 - 01/07</p>
+                  </div>
+                  <!-- 2 -->
+                  <div class="bannerWrapper">
+                    <img
+                      src=" https://static.wikitide.net/bluearchivewiki/thumb/f/f5/Lobby_Banner_20241224_02.png/300px-Lobby_Banner_20241224_02.png"
+                      alt=""
+                    />
+                    <p><a href="">Noa (Pajama)</a>: 12/24 - 01/07</p>
+                  </div>
+                </div>
               </div>
-              <div id="banner-content">
-                <!-- 1 -->
-                <span class="banner">
-                  <img
-                    src="https://static.wikitide.net/bluearchivewiki/thumb/1/1f/Lobby_Banner_20240626_01.png/300px-Lobby_Banner_20240626_01.png"
-                    alt=""
-                  />
-                  <p><a href="">Kanna (Swimsuit)</a>: 12/24 - 01/07</p>
-                </span>
-                <!-- 2 -->
-                <span class="banner">
-                  <img
-                    src="https://static.wikitide.net/bluearchivewiki/thumb/8/82/Lobby_Banner_20240626_02.png/300px-Lobby_Banner_20240626_02.png"
-                    alt=""
-                  />
-                  <p><a href="">Fubuki (Swimsuit)</a>: 12/24 - 01/07</p>
-                </span>
+              <!-- News -->
+              <div class="content-box">
+                <h4>News</h4>
+                <div id="btnWrapped">
+                  <button onclick="display('postJp','postGl')">JP</button>
+                  <button onclick="display('postGl','postJp')">GL</button>
+                </div>
+                <!-- postGl -->
+                <div id="postGl">
+                  <div class="postWrapped">
+                    <a
+                      class="twitter-timeline"
+                      href="https://twitter.com/EN_BlueArchive?ref_src=twsrc%5Etfw"
+                      >Tweets by EN_BlueArchive</a
+                    >
+                  </div>
+                </div>
+                <!-- postJp -->
+                <div id="postJp">
+                  <div class="postWrapped">
+                    <a
+                      class="twitter-timeline"
+                      href="https://twitter.com/Blue_ArchiveJP?ref_src=twsrc%5Etfw"
+                      >Tweets by Blue_ArchiveJP</a
+                    >
+                  </div>
+                </div>
               </div>
             </div>
             <!-- collum 2 -->
-            <div id="group-content">
-              <!-- Current banner sec -->
+            <div class="collum-2">
+              <!-- Current Raids sec -->
               <div class="content-box">
                 <h4>Current Raids</h4>
-                <div>
-                  <button type="button" id="jp-button">JP</button>
-                  <button type="button" id="gl-button">GL</button>
+                <div id="btnWrapped">
+                  <button onclick="display('raidJp', 'raidGl')">JP</button>
+                  <button onclick="display('raidGl', 'raidJp')">GL</button>
                 </div>
-                <div id="banner-content">
+
+                <!-- Raid Gl -->
+                <div id="raidGl">
                   <!-- 1 -->
-                  <span class="banner" id="raid">
+                  <span class="bannerWrapper" id="raid">
                     <img
                       src="https://static.wikitide.net/bluearchivewiki/thumb/0/01/Raid_Banner_Binah.png/300px-Raid_Banner_Binah.png"
                       alt=""
@@ -115,6 +176,31 @@
                       <li>
                         <p>
                           <a href=""
+                            >Decagrammaton: Chokmah (Limit Break Raid)</a
+                          >: 12/25 - 01/20
+                        </p>
+                      </li>
+                    </ul>
+                  </span>
+                </div>
+
+                <!-- Raid jp -->
+                <div id="raidJp">
+                  <!-- 1 -->
+                  <span class="bannerWrapper" id="raid">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/5/56/Raid_Banner_Hovercraft.png/300px-Raid_Banner_Hovercraft.png"
+                      alt="Raid_Banner_Hovercraft"
+                    />
+                    <ul>
+                      <li>
+                        <p>
+                          <a href=""> Wakamo: Hovercraft: </a>: 01/01 - 01/08
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <a href=""
                             >Celestial Pantheon: The Fury of Set (Limit Break
                             Raid)</a
                           >: 12/25 - 01/23
@@ -124,22 +210,62 @@
                   </span>
                 </div>
               </div>
-  
+
               <!-- Recent Events sec -->
               <div class="content-box">
-                <h4>Recent Events</h4>
-                <div>
-                  <button type="button" id="jp-button">JP</button>
-                  <button type="button" id="gl-button">GL</button>
+                <h4>Recent Events and Updates</h4>
+                <div id="btnWrapped">
+                  <button onclick="display('eventInfoJp', 'eventInfoGl')">
+                    JP
+                  </button>
+                  <button onclick="display('eventInfoGl', 'eventInfoJp')">
+                    GL
+                  </button>
                 </div>
-                <div id="banner-content">
-                  <!-- 1 -->
-                  <span class="banner" id="raid">
+                <!-- Gl -->
+                <!-- 1 -->
+                <div id="eventInfoGl" class="bannerEvents">
+                  <span class="bannerWrapper">
                     <img
                       src="https://static.wikitide.net/bluearchivewiki/thumb/8/89/Event_Banner_837_Jp.png/300px-Event_Banner_837_Jp.png"
                       alt=""
                     />
-                    <p><a href="">Say-Bing!</a>: 12/24 - 01/07</p>
+                    <ul>
+                      <li><a href="">Say-Bing!</a>: 12/24 - 01/07</li>
+                    </ul>
+                  </span>
+                  <!-- 2 -->
+                  <span class="bannerWrapper">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/0/02/Event_Banner_827_Jp.png/300px-Event_Banner_827_Jp.png"
+                      alt=""
+                    />
+                    <ul>
+                      <li>
+                        <a href=""
+                          >Special Summer Mission! RABBIT SQUAD and the Mystery
+                          of the Missing Shrimp:</a
+                        >: 01/07 - 01/14
+                      </li>
+                    </ul>
+                  </span>
+                </div>
+                <!-- Jp -->
+                <div id="eventInfoJp">
+                  <span class="bannerWrapper">
+                    <img
+                      src="https://static.wikitide.net/bluearchivewiki/thumb/1/19/Event_Banner_842_Jp.png/300px-Event_Banner_842_Jp.png"
+                      alt=""
+                    />
+                    <ul>
+                      <li>
+                        <a href="">Secret Midnight Party ~ Oni Holds a Bell ~</a
+                        >: 12/24 - 01/08
+                      </li>
+                      <li>
+                        <a href="">Double Commissions rewards</a>: 01/01 - 01/08
+                      </li>
+                    </ul>
                   </span>
                 </div>
               </div>
@@ -157,6 +283,15 @@
         <a href="">instagram</a>
       </p>
     </footer>
+
+    <!-- Jp Blue Archive X -->
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+
+    <!--  -->
     <script src="script.js"></script>
   </body>
 </html>
