@@ -29,6 +29,7 @@ nav {
 }
 
 body {
+    min-width: 100%;
     color: var(--text);
     background-color: #363A48;
     min-height: 100vh;
@@ -51,7 +52,7 @@ main {
 
 nav {
     margin: 0 auto;
-    width: 70%;
+    min-width: 70%;
     align-items: center;
     justify-content:space-between;
 }
