@@ -25,7 +25,7 @@ nav {
     font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
     margin: 0;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -198,6 +198,39 @@ nav ul li:hover {
 
 /* main content */
 
+.abt-content-box{
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    .abt-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: inherit;
+        height: 8rem;
+    }
+
+    .abt-banner .abt-bg{
+        z-index: -1;
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: 10px;
+        background-image: url(https://static.wikitide.net/bluearchivewiki/e/e7/BG_CS_Arona.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+    }
+
+    .abt-content{
+        margin: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 #margin-cont {
     width: 90%;
 }
@@ -226,35 +259,82 @@ nav ul li:hover {
 }
 
 .content-container {
-    gap: 15px;
+    gap: 10px;
+    min-height: 20rem;
     max-width: 100%;
     margin: inherit;
     display: flex;
     justify-content: center;
-    padding: 1rem;
     margin: 1rem 0;
 }
 
 .collum-1{
     display: flex;
-    flex-direction: column;
-    min-height: auto;
-    width: 50%;
-    gap: 15px;
+    height: min-content;
+    width :100%;
+    gap: 10px;
 }
 
 .collum-2 {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    width: 50%;
+    gap: 10px;
+    height: min-content;
+    width: 40%;
+}
+
+#abt-content {
+    h5 {
+       
+        box-sizing: border-box;
+        padding: 1rem 0 0 0;
+        font-size: larger;
+    }
 }
 
 .content-box {
+    
     border-radius: 13px;
     background-color: var(--content);
     width: 100%;
-    height: 100%;
+    text-align: center;
+}
+
+.box-wrap {
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    
+    .box-content{
+        z-index: 1;
+        position: relative;
+        margin: 2px 0;
+        border-radius: 10px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: left;
+        padding: 1rem;
+        background-color: var(--accent);
+        .triangle {
+            z-index: -1;
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 20%;
+            height: 100%;
+            border-radius: 0 10px 10px 0;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+        }
+    }
+
+    .box-content:hover{
+        .triangle{
+            opacity: 0.5;
+            width: 100%;
+        }
+    }
 }
 
 .content-box h4 {
@@ -270,10 +350,11 @@ nav ul li:hover {
     justify-content: center;
     display: flex;
     gap: 5px;
-    padding: 1rem;
+    
 }
 
-#btnWraped{
+.btnWrapped{
+    padding: 1rem 0;
     margin: 0 auto;
 }
 
@@ -290,60 +371,47 @@ nav ul li:hover {
     background-color:var(--accent) ;
 }
 
-.content-box button:active{
-    background-color:var(--header);
-}
-
 .postWrapped{
-    width: 20rem;
+    padding: 10px;
+    margin: 0;
     position: relative;
-    top: -45px;
     box-sizing: content-box;
-    margin: 1rem;
-    height: 18rem;
-    overflow-y:auto;
 }
 
 .postWrapped .twitter-timeline {
-    border-radius: 30px;
-    box-sizing: border-box;
+    margin: 0;
     padding: 0;
-    width: 100%;
 
 }
 
 #postGl{
+    padding: 0;
     display: flex;
 }
 
 #postJp{
+    padding: 0;
     display: none;
 }
 
 #boxBanner1 {
-    padding: 0.5rem;
-    opacity: 1;
     display: flex;
     flex-direction: column;
 }
 
 #boxBanner2{
-    padding: 0.5rem;
-    opacity: 0;
     display: none;
     flex-direction: column;
 }
 
 #raidGl {
     padding: 0.5rem;
-    opacity: 1;
     display: flex;
     flex-direction: column;
 }
 
 #raidJp {
     padding: 0.5rem;
-    opacity: 0;
     display: none;
     flex-direction: column;
 }
@@ -359,22 +427,21 @@ nav ul li:hover {
     flex-direction: column;
 }
 
-.bannerEvents{
-    position: relative;
-    top: -10px;
-}
-
-.bannerGacha{
-    position: relative;
-    top: -20px;
-}
-
 .bannerWrapper {
-    width: min-content;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-right: auto;
     margin-left: auto;
+    img {
+        max-width: 16rem;
+    }
+    ul {
+        max-width: 16rem;
+        list-style-position: inside;
+    }
 }
 
 #raid {
@@ -388,11 +455,11 @@ nav ul li:hover {
 
     ul {
         position: relative;
-        left: 20px;
-        padding: 1rem;
         align-items: center;
         list-style-image: url(https://static.wikitide.net/bluearchivewiki/thumb/6/6d/Icon_location_outdoors.png/24px-Icon_location_outdoors.png);
+        list-style-position: inside;
         p {
+
             position: relative;
             bottom: 5px;
         }
@@ -429,6 +496,18 @@ footer a:hover {
 
 footer i {
     color: #3b3b3b;
+}
+
+@media (min-width: 1271px){
+    .collum-1{
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 1270px){
+    .collum-1{
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 1001px){

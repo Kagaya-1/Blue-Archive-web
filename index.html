@@ -66,17 +66,66 @@
             <hr />
           </div>
 
+          <!-- Abot -->
+          <div class="content-container">
+            <div class="collum-1">
+              <!-- collum 1 -->
+              <div class="abt-content-box">
+                <div class="abt-banner">
+                  <div class="abt-bg"></div>
+                  <h1>About</h1>
+                </div>
+
+                <div class="abt-content">
+                  <h1>Wlecome</h1>
+                  <h3>About Blue Archive</h3>
+                  <p>
+                    Blue Archive is a gacha-based RPG developed by NAT Games and
+                    published by Yostar. Set in the fictional city of Kivotos,
+                    players take on the role of "Sensei," a counselor tasked
+                    with assisting students from various academies in resolving
+                    conflicts and challenges. The game is known for its stunning
+                    anime-style visuals, unique characters, and an engaging
+                    storyline that spans various genres, from comedy to drama.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- collum 2 -->
+            <div class="collum-2">
+              <div id="abt-content" class="content-box">
+                <h5>Devices</h5>
+                <div class="box-wrap">
+                  <div class="box-content" id="mobile">
+                    <h3>Playstore</h3>
+                    <div class="triangle"></div>
+                  </div>
+                  <div class="box-content" id="appstore">
+                    <h3>Appstore</h3>
+                    <div class="triangle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- banner, raids, vent info -->
           <div class="content-container">
             <div class="collum-1">
               <!-- collum 1 -->
               <div class="content-box">
                 <h4>Current banner</h4>
-                <div id="btnWrapped">
-                  <button onclick="display('boxBanner2','boxBanner1')">
+                <div class="btnWrapped">
+                  <button
+                    id="btn-1a"
+                    onclick="display('boxBanner2','boxBanner1'), btnVisited('btn-1a', 'btn-2a')"
+                  >
                     JP
                   </button>
-                  <button onclick="display('boxBanner1','boxBanner2')">
+                  <button
+                    id="btn-2a"
+                    onclick="display('boxBanner1','boxBanner2'), btnVisited('btn-2a', 'btn-1a')"
+                  >
                     GL
                   </button>
                 </div>
@@ -98,9 +147,8 @@
                     <p><a href="">Fubuki (Swimsuit)</a>: 12/24 - 01/08</p>
                   </div>
                 </div>
-
                 <!-- banner content2 -->
-                <div id="boxBanner2">
+                <div id="boxBanner2" class="bannerWrapper bannerGacha">
                   <!-- 1 -->
                   <div class="bannerWrapper">
                     <img
@@ -119,49 +167,29 @@
                   </div>
                 </div>
               </div>
-              <!-- News -->
-              <div class="content-box">
-                <h4>News</h4>
-                <div id="btnWrapped">
-                  <button onclick="display('postJp','postGl')">JP</button>
-                  <button onclick="display('postGl','postJp')">GL</button>
-                </div>
-                <!-- postGl -->
-                <div id="postGl">
-                  <div class="postWrapped">
-                    <a
-                      class="twitter-timeline"
-                      href="https://twitter.com/EN_BlueArchive?ref_src=twsrc%5Etfw"
-                      >Tweets by EN_BlueArchive</a
-                    >
-                  </div>
-                </div>
-                <!-- postJp -->
-                <div id="postJp">
-                  <div class="postWrapped">
-                    <a
-                      class="twitter-timeline"
-                      href="https://twitter.com/Blue_ArchiveJP?ref_src=twsrc%5Etfw"
-                      >Tweets by Blue_ArchiveJP</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- collum 2 -->
-            <div class="collum-2">
+
               <!-- Current Raids sec -->
               <div class="content-box">
                 <h4>Current Raids</h4>
-                <div id="btnWrapped">
-                  <button onclick="display('raidJp', 'raidGl')">JP</button>
-                  <button onclick="display('raidGl', 'raidJp')">GL</button>
+                <div class="btnWrapped">
+                  <button
+                    id="btn-1c"
+                    onclick="display('raidJp', 'raidGl'), btnVisited('btn-1c', 'btn-2c')"
+                  >
+                    JP
+                  </button>
+                  <button
+                    id="btn-2c"
+                    onclick="display('raidGl', 'raidJp'), btnVisited('btn-2c', 'btn-1c')"
+                  >
+                    GL
+                  </button>
                 </div>
 
                 <!-- Raid Gl -->
                 <div id="raidGl">
                   <!-- 1 -->
-                  <span class="bannerWrapper" id="raid">
+                  <div class="bannerWrapper" id="raid">
                     <img
                       src="https://static.wikitide.net/bluearchivewiki/thumb/0/01/Raid_Banner_Binah.png/300px-Raid_Banner_Binah.png"
                       alt=""
@@ -181,13 +209,13 @@
                         </p>
                       </li>
                     </ul>
-                  </span>
+                  </div>
                 </div>
 
                 <!-- Raid jp -->
                 <div id="raidJp">
                   <!-- 1 -->
-                  <span class="bannerWrapper" id="raid">
+                  <div class="bannerWrapper" id="raid">
                     <img
                       src="https://static.wikitide.net/bluearchivewiki/thumb/5/56/Raid_Banner_Hovercraft.png/300px-Raid_Banner_Hovercraft.png"
                       alt="Raid_Banner_Hovercraft"
@@ -207,25 +235,76 @@
                         </p>
                       </li>
                     </ul>
-                  </span>
+                  </div>
                 </div>
               </div>
-
+            </div>
+            <!-- collum 2 -->
+            <div class="collum-2">
+              <!-- News -->
+              <div class="content-box">
+                <h4>News</h4>
+                <div class="btnWrapped">
+                  <button
+                    id="btn-1d"
+                    onclick="display('postJp','postGl'), btnVisited('btn-1d', 'btn-2d')"
+                  >
+                    JP
+                  </button>
+                  <button
+                    id="btn-2d"
+                    onclick="display('postGl','postJp'), btnVisited('btn-2d', 'btn-1d')"
+                  >
+                    GL
+                  </button>
+                </div>
+                <!-- postGl -->
+                <div id="postGl">
+                  <div class="postWrapped">
+                    <a
+                      class="twitter-timeline"
+                      data-width="300"
+                      data-height="288"
+                      data-theme="dark"
+                      href="https://twitter.com/EN_BlueArchive?ref_src=twsrc%5Etfw"
+                    ></a>
+                  </div>
+                </div>
+                <!-- postJp -->
+                <div id="postJp">
+                  <div class="postWrapped">
+                    <a
+                      class="twitter-timeline"
+                      data-width="300"
+                      data-height="288"
+                      data-theme="dark"
+                      href="https://twitter.com/Blue_ArchiveJP?ref_src=twsrc%5Etfw"
+                    ></a>
+                  </div>
+                </div>
+              </div>
               <!-- Recent Events sec -->
               <div class="content-box">
                 <h4>Recent Events and Updates</h4>
-                <div id="btnWrapped">
-                  <button onclick="display('eventInfoJp', 'eventInfoGl')">
+                <div class="btnWrapped">
+                  <button
+                    id="btn-1b"
+                    onclick="display('eventInfoJp', 'eventInfoGl'), btnVisited('btn-1b', 'btn-2b')"
+                  >
                     JP
                   </button>
-                  <button onclick="display('eventInfoGl', 'eventInfoJp')">
+                  <button
+                    id="btn-2b"
+                    onclick="display('eventInfoGl', 'eventInfoJp'), btnVisited('btn-2b', 'btn-1b')"
+                  >
                     GL
                   </button>
                 </div>
                 <!-- Gl -->
-                <!-- 1 -->
+
                 <div id="eventInfoGl" class="bannerEvents">
-                  <span class="bannerWrapper">
+                  <!-- 1 -->
+                  <div class="bannerWrapper">
                     <img
                       src="https://static.wikitide.net/bluearchivewiki/thumb/8/89/Event_Banner_837_Jp.png/300px-Event_Banner_837_Jp.png"
                       alt=""
@@ -233,9 +312,9 @@
                     <ul>
                       <li><a href="">Say-Bing!</a>: 12/24 - 01/07</li>
                     </ul>
-                  </span>
+                  </div>
                   <!-- 2 -->
-                  <span class="bannerWrapper">
+                  <div class="bannerWrapper">
                     <img
                       src="https://static.wikitide.net/bluearchivewiki/thumb/0/02/Event_Banner_827_Jp.png/300px-Event_Banner_827_Jp.png"
                       alt=""
@@ -248,11 +327,11 @@
                         >: 01/07 - 01/14
                       </li>
                     </ul>
-                  </span>
+                  </div>
                 </div>
                 <!-- Jp -->
                 <div id="eventInfoJp">
-                  <span class="bannerWrapper">
+                  <div class="bannerWrapper">
                     <img
                       src="https://static.wikitide.net/bluearchivewiki/thumb/1/19/Event_Banner_842_Jp.png/300px-Event_Banner_842_Jp.png"
                       alt=""
@@ -266,7 +345,7 @@
                         <a href="">Double Commissions rewards</a>: 01/01 - 01/08
                       </li>
                     </ul>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -280,7 +359,8 @@
         This web was made by kagaya-01(hibban) as a school poject <br />
         ありがとうございました- <br />
         <a href="https://github.com/Kagaya-1" title="Kagaya-01">GitHub</a> |
-        <a href="">instagram</a>
+        <a href="">instagram</a> <br />
+        &copy; Hibban Ahmad Ibrahim 2025
       </p>
     </footer>
 

@@ -5,7 +5,13 @@ function display(activeDisplay, notDisplay) {
     // display
     active.style.display = 'flex';
     reset.style.display = 'none';
-    // opacity
-    active.style.opacity = '1';
-    reset.style.opacity = '0';
+    
+}
+
+function btnVisited(btnActive, btnReset) {
+    const visited = document.getElementById(btnActive);
+    const notVisited = document.getElementById(btnReset);
+    //change color
+    visited.style.background = 'var(--accent)';
+    notVisited.style.background = 'var(--header)';
 }
