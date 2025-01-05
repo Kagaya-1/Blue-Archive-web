@@ -13,9 +13,10 @@
       <div class="box-gradient"></div>
     </div>
     <!-- Navbar -->
-    <nav>
+    <nav class="navbar">
       <img src="assets/Blue_Archive_EN_logo.png" alt="" />
-      <label for="activate-sidebar"
+      <input type="checkbox" id="activate">
+      <label for="activate"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
@@ -28,12 +29,33 @@
           /></svg
       ></label>
       <!-- Ul -->
-      <ul>
+      <ul class="navbar-cont">
         <li>Students</li>
         <li>Events</li>
         <li>Raids</li>
         <li>Missions</li>
       </ul>
+      <div class="sidebar">
+        <input type="checkbox" id="activate">
+      <label for="activate"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          /></svg
+      ></label>
+        <ul>
+          <li>Students</li>
+          <li>Events</li>
+          <li>Raids</li>
+          <li>Missions</li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Main content -->
