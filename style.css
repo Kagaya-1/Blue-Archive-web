@@ -690,13 +690,27 @@ footer i {
         display: flex;
     }
 
+    .sidebar {
+        display: none;
+    }
+
+
     .banner-kivotos{
+        display: none;
+    }
+    .sidebar {
         display: none;
     }
 
 }
 
+.sidebar {
+    display: none;
+}
+
 @media screen and (max-width: 810px) and (min-width: 401px){
+
+    
     
     .sidebar {
         z-index: 1;
@@ -1016,6 +1030,3 @@ footer i {
 
 }
 
-.sidebar {
-    display: none;
-}
