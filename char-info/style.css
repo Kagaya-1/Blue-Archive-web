@@ -1227,3 +1227,11 @@ footer i {
 
 }
 
+.overlay-black {
+    position: absolute;
+    top: 4rem;
+    z-index: 9999;
+    width: 100%;
+    height: 10000%;
+    background-color: #131313;
+}
