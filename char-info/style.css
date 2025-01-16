@@ -10,6 +10,12 @@
     --content: #4F5568;
     --accent: #4b90f8;
     --text: #F3F9FF;
+    --blue: #0091df;
+    --red: #e00007;
+    --yellow: #ffbb00;
+    --purple: #9A45AB;
+    --attacker: #e93f3f;
+    --special: #359fd8;
 }
 
 ::placeholder {
@@ -49,16 +55,12 @@ a {
 
 main {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 100%;
+    min-width: 100%;
     z-index: 1;
     min-height: content;
 }
-
-
-
 
 /* Navbar */
 
@@ -202,7 +204,7 @@ hr {
     box-sizing: border-box;
     width: inherit;
     border-radius: 10px;
-    background-image: url(assets/1537px-BG_CS_PV_03.jpg);
+    background-image: url(../assets/1537px-BG_CS_PV_03.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: -7rem;
@@ -228,7 +230,7 @@ hr {
     width: 100%;
 }
 
-.abt-content-box{
+.abt-content-wrapped{
     z-index: 1;
     position: relative;
     width: 100%;
@@ -329,61 +331,6 @@ a {
     color: var(--text);
 }
 
-#ldPlayer{
-    background-color: #1f1f1f;
-}
-
-#ldPlayer:hover{
-    background-color: #282634;
-    opacity: 1;
-}
-
-#ldPlayer::after{
-    background-color: #ffca28
-}
-#ldPlayer::before{
-    background-color: #cb9d00;
-}
-
-
-#socialX{
-    background-color: #131313;
-}
-
-#socialX img{
-    margin: 0 0.5rem;
-    z-index: 9999;
-    width: 1.5rem;
-}
-
-#socialX:hover{
-    background-color: #1f1f1f;
-    opacity: 1;
-}
-
-#socialX::after{
-    background-color: #4b555c;
-}
-#socialX::before{
-    background-color: #282634;
-}
-
-#socialWebOfficial{
-    background-color: #004d67;
-}
-
-#socialWebOfficial:hover{
-    background-color: #1e5269;
-}
-
-#socialWebOfficial:after{
-    background-color: #9DAB00;
-}
-#socialWebOfficial::before{
-    background-color: #778800;
-}
-
-
 .blue-button{
     height: 1.5rem;
     overflow: hidden;
@@ -458,55 +405,95 @@ a {
     z-index: 3;
 }
 
-.char-row-2{
-    height: min;
-    width: 100%;
-}
-
-#gameMechanics {
-    padding: 1rem 0 3rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.game-mech-1 {
-    display: flex;
-    flex-direction: column;
-    width: min-content;
-    img {
-        width: 8rem;
-    }
-}
-
-.students-container{
+#students-container{
+    overflow-x: scroll;
     max-width: 100%;
 }
 
+table {
+    
+    background-color: var(--header);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+td,th {
+    box-sizing: border-box;
+    text-align: left;
+    padding: 10px;
+}
+td{
+    background-color: var(--content);
+}
+tr:last-child{
+    border-radius: 0 0 10px 10px;
+}
+th {
+    padding : 1rem;
+    background-color: var(--header);
+}
+th:last-child {
+    border-radius: 0 10px 0 0;
+}
+th:first-child {
+    
+    border-radius: 10px 0 0 0;
+}
+  
+/* Atk Type CLass coloring */
+.explosive{
+    .atk-type {
+        background: var(--red);
+    }
+}
+.piercing{
+    .atk-type {
+        background: var(--yellow);
+    }
+}
+.mystic{
+    .atk-type {
+      background: var(--blue);
+    }
+}
+.sonic{
+    .atk-type {
+      background: var(--purple);
+    }
+}
+
+  /* Atk Type CLass coloring */
+.striker{
+    .role {
+      background: var(--red);
+    }
+}
+.special{
+    .role {
+      background: var(--blue);
+    }
+}
+
 .student-info-wrap{
-    padding: 1rem 0;
+    padding: rem 0;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     background-color: var(--content);
     width: 15rem;
     height: min-content;
-    img {
-        margin: 1rem;
-        width: 8rem;
-    }
+    
     .info {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    table {
-        border: 2px solid #004d67;
-    }
-    table tr td img {
-        border: 2px solid #004d67;
-        width: 3rem;
+}
+
+.student-data{
+    .studentRarityTd{
+        img {
+            width: 1rem;
+        }
     }
 }
 
@@ -603,62 +590,6 @@ a {
     background-color:var(--accent) ;
 }
 
-.post-wrapped{
-    padding: 10px;
-    margin: 0;
-    position: relative;
-    box-sizing: content-box;
-}
-
-.post-wrapped .twitter-timeline {
-    margin: 0;
-    padding: 0;
-
-}
-
-#postGl{
-    padding: 0;
-    display: flex;
-}
-
-#postJp{
-    padding: 0;
-    display: none;
-}
-
-#gachaBannerGl {
-    display: flex;
-    flex-direction: column;
-}
-
-#gachaBannerJp{
-    display: none;
-    flex-direction: column;
-}
-
-#raidGl {
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-#raidJp {
-    padding: 0.5rem;
-    display: none;
-    flex-direction: column;
-}
-
-#eventInfoGl {
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-#eventInfoJp {
-    display: none;
-    flex-direction: column;
-}
-
 .content-wrapper {
     margin: 1rem 0;
 }
@@ -675,29 +606,6 @@ a {
         max-width: 16rem;
         list-style-position: inside;
     }
-}
-
-.raid-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-        position: relative;
-        top: -10px;
-        width: min-content;
-    }
-
-    ul {
-        position: relative;
-        align-items: center;
-        list-style-image: url(https://static.wikitide.net/bluearchivewiki/thumb/6/6d/Icon_location_outdoors.png/24px-Icon_location_outdoors.png);
-        list-style-position: inside;
-        p {
-
-            position: relative;
-            bottom: 5px;
-        }
-        }
 }
 
 
@@ -796,7 +704,7 @@ footer i {
         z-index: -9999;
         position: absolute;
         display: block;
-        background-image: url(assets/kivotos.png);
+        background-image: url(../assets/kivotos.png);
         background-position:center;
         opacity: 0.5;
         width: 100%;
@@ -938,7 +846,7 @@ footer i {
         z-index: -9999;
         position: absolute;
         display: block;
-        background-image: url(assets/kivotos.png);
+        background-image: url(../assets/kivotos.png);
         background-position:center;
         opacity: 0.5;
         width: 100%;
@@ -1046,7 +954,9 @@ footer i {
     }
 }
 @media screen and (max-width: 890px) and (min-width: 401px) {
-
+    #students-container {
+        overflow-x: scroll;
+    }
     .content-container{
         flex-direction: column;
         align-items: start;
@@ -1126,7 +1036,7 @@ footer i {
         z-index: -9999;
         position: absolute;
         display: block;
-        background-image: url(assets/kivotos.png);
+        background-image: url(../assets/kivotos.png);
         background-position:center;
         opacity: 0.5;
         width: 100%;
@@ -1227,11 +1137,3 @@ footer i {
 
 }
 
-.overlay-black {
-    position: absolute;
-    top: 4rem;
-    z-index: 9999;
-    width: 100%;
-    height: 10000%;
-    background-color: #131313;
-}
