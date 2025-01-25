@@ -419,10 +419,18 @@ table {
 td,th {
     box-sizing: border-box;
     text-align: left;
-    padding: 10px;
+    
 }
 td{
+    position: relative;
     background-color: var(--content);
+    h5 {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: var(--header);
+    }
 }
 tr:last-child{
     border-radius: 0 0 10px 10px;

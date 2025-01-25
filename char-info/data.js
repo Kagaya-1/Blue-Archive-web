@@ -6,10 +6,23 @@ fetch("data.json").then((response) => response.json()).then((data) => {
       let stars = "";
       for (let i = 0; i < count; i++) {
         stars +=
-          '<img src="../assets/stats-icon/rarity/stars.png" alt="Star" width="16" height="16"> ';
+          '<img src="../assets/stats-icon/rarity/stars.png" alt="Star" width="20" height="20"> ';
       }
-      if (count < 4 ) return stars;
-      if (count > 3) return "";
+      if (count <= 6)return stars;
+      
+    }
+
+    function rarityLabel(count){
+      let label = ""; 
+      switch (count) {
+        case 4:
+          label = "<h5>Limited</h5>";
+        break;
+      
+        default:
+          break;
+      }
+      return label;
     }
   
     function positionImg(position){
@@ -47,10 +60,10 @@ fetch("data.json").then((response) => response.json()).then((data) => {
       const thead = document.createElement("thead");
       thead.innerHTML = `
         <tr>
-          <th>Image</th>
+          <th style='width: 1rem;'>Image</th>
           <th>Name</th>
           <th>School</th>
-          <th>Rarity</th>
+          <th style="text-align: center; width: 1px;">Rarity</th>
           <th>Role</th>
           <th>Class</th>
           <th>Position</th>
@@ -66,11 +79,11 @@ fetch("data.json").then((response) => response.json()).then((data) => {
         row.classList.add(item.role.toLowerCase());
         row.classList.add(item.atkType.toLowerCase());
         row.innerHTML = `
-          <td><image src='${item.img}'style="border-radius: 5px; width: 3rem;" ></image></td>
+          <td style="text-align: center;"><image src='${item.img}'style="border-radius: 5px; width: 3rem;" ></image></td>
           <td>${firstCharCapitalize(item.name)}</td>
           <td style="text-align: center;">${firstCharCapitalize(item.school)}</td>
-          <td>${createStars(item.rarity)}</td>
-          <td class="role" style="text-align: center;">${firstCharCapitalize(item.role)}</td>
+          <td style="text-align: center; padding: 0.5rem ;">${createStars(item.rarity)} <hr> ${rarityLabel(item.rarity)}</td>
+          <td class="role" style="text-align: center; padding: 1rem;">${firstCharCapitalize(item.role)}</td>
           <td>${firstCharCapitalize(item.class)}</td>
           <td style="text-align: center;">${positionImg(item.position)}</td>
           <td class="atk-type" style="text-align: center;">${firstCharCapitalize(item.atkType)}</td>
