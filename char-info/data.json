@@ -244,7 +244,9 @@
   {
     "img": "https://static.wikitide.net/bluearchivewiki/thumb/1/13/Fuuka_%28New_Year%29.png/40px-Fuuka_%28New_Year%29.png",
     "name": "fuuka (new year)",
-    "rarity": 4,
+    "rarity": 3,
+    "limited": true,
+    "fest": false,
     "school": "gehenna",
     "class": "support",
     "position": "back",

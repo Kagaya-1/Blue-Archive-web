@@ -5,30 +5,24 @@ fetch("data.json").then((response) => response.json()).then((data) => {
     function createStars(count) {
       let stars = "";
       for (let i = 0; i < count; i++) {
-        stars +=
-          '<img src="../assets/stats-icon/rarity/stars.png" alt="Star" width="20" height="20"> ';
+        stars += '<img src="../assets/stats-icon/rarity/stars.png" alt="Star" width="24" height="24">';
       }
-      if (count <= 6)return stars;
+      if (count <= 3)return stars;
       
     }
 
-    function rarityLabel(count){
+    function rarityLabel(limited){
       let label = ""; 
-      switch (count) {
-        case 4:
-          label = "<h5>Limited</h5>";
-        break;
-      
-        default:
-          break;
+      if(limited === true){
+        label = "<h5>Limited</h5>";
       }
       return label;
     }
   
     function positionImg(position){
-      const backImg = "<img src='../assets/stats-icon/position/back.png'></img>";
-      const middleImg = "<img src='../assets/stats-icon/position/middle.png'></img>";
-      const frontImg = "<img src='../assets/stats-icon/position/front.png'></img>";
+      const backImg = "<img src='../assets/stats-icon/position/back.png' width='60px'></img>";
+      const middleImg = "<img src='../assets/stats-icon/position/middle.png' width='60px'></img>";
+      const frontImg = "<img src='../assets/stats-icon/position/front.png' width='60px'></img>";
       let img = "";
       switch (position) {
         case "back":
@@ -82,7 +76,7 @@ fetch("data.json").then((response) => response.json()).then((data) => {
           <td style="text-align: center;"><image src='${item.img}'style="border-radius: 5px; width: 3rem;" ></image></td>
           <td>${firstCharCapitalize(item.name)}</td>
           <td style="text-align: center;">${firstCharCapitalize(item.school)}</td>
-          <td style="text-align: center; padding: 0.5rem ;">${createStars(item.rarity)} <hr> ${rarityLabel(item.rarity)}</td>
+          <td style="text-align: center; padding: 0.5rem ;">${createStars(item.rarity)} ${rarityLabel(item.limited)}</td>
           <td class="role" style="text-align: center; padding: 1rem;">${firstCharCapitalize(item.role)}</td>
           <td>${firstCharCapitalize(item.class)}</td>
           <td style="text-align: center;">${positionImg(item.position)}</td>
