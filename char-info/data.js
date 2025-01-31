@@ -1,6 +1,8 @@
 // Data JSON
 fetch("data.json").then((response) => response.json()).then((data) => {
-    console.log(data);
+    console.log(data.students);
+
+    let datum = data.students;
     // Fungsi untuk membuat bintang tergantung rarity
     function createStars(count) {
       let stars = "";
@@ -11,10 +13,16 @@ fetch("data.json").then((response) => response.json()).then((data) => {
       
     }
 
-    function rarityLabel(limited){
+    function rarityLabel(x){
       let label = ""; 
-      if(limited === true){
+      if(x === "limited"){
         label = "<h5>Limited</h5>";
+      } 
+      else if(x === "fest"){
+        label = "<h5>Fest</h5>";
+      }
+      else if(x === "warfare"){
+        label = "<h5>Warfare</h5>";
       }
       return label;
     }
@@ -47,7 +55,7 @@ fetch("data.json").then((response) => response.json()).then((data) => {
     }
   
     // Fungsi untuk membuat tabel campuran
-    function createMixedTable(data) {
+    function createMixedTable(datum) {
       const table = document.createElement("table");
   
       // Header tabel
@@ -68,7 +76,7 @@ fetch("data.json").then((response) => response.json()).then((data) => {
   
       // Isi tabel
       const tbody = document.createElement("tbody");
-      data.forEach((item) => {
+      datum.forEach((item) => {
         const row = document.createElement("tr");
         row.classList.add(item.role.toLowerCase());
         row.classList.add(item.atkType.toLowerCase());
@@ -76,7 +84,7 @@ fetch("data.json").then((response) => response.json()).then((data) => {
           <td style="text-align: center;"><image src='${item.img}'style="border-radius: 5px; width: 3rem;" ></image></td>
           <td>${firstCharCapitalize(item.name)}</td>
           <td style="text-align: center;">${firstCharCapitalize(item.school)}</td>
-          <td style="text-align: center; padding: 0.5rem ;">${createStars(item.rarity)} ${rarityLabel(item.limited)}</td>
+          <td style="text-align: center; padding: 0.5rem ;">${createStars(item.rarity)} ${rarityLabel(item.gacha)}</td>
           <td class="role" style="text-align: center; padding: 1rem;">${firstCharCapitalize(item.role)}</td>
           <td>${firstCharCapitalize(item.class)}</td>
           <td style="text-align: center;">${positionImg(item.position)}</td>
@@ -91,7 +99,7 @@ fetch("data.json").then((response) => response.json()).then((data) => {
   
     // Render tabel
     const tableContainer = document.getElementById("students-container");
-    const mixedTable = createMixedTable(data);
+    const mixedTable = createMixedTable(datum);
     tableContainer.appendChild(mixedTable);
   }).catch((error) => {
     console.error("Error:", error);
